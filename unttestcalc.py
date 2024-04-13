@@ -74,6 +74,6 @@ class TestCalculator(unittest.TestCase):
     def test_ceil(self):
         result = self.calculator.ceil(3.2)
         self.assertEqual(result, 4)
-
+#доделала
 if __name__ == '__main__':
     unittest.main()
