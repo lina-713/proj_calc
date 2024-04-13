@@ -7,8 +7,7 @@ class TestCalculator(unittest.TestCase):
 
     def setUp(self):
         self.root = Tk()
-        self.root.withdraw()  # Позволяет создавать тесты без показа графического интерфейса
-
+        self.root.withdraw() 
     def tearDown(self):
         self.root.destroy()
 
@@ -29,7 +28,7 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(result, 3)
 
     def test_zero_division(self):
-        with self.assertRaises(tk.TclError):
+        with self.assertRaises(tk.TclError):  
             self.calculate_operation("Деление", 6, 0)
 
     def test_sin(self):
@@ -52,3 +51,38 @@ class TestCalculator(unittest.TestCase):
         result = self.calculate_operation("Округление в большую сторону", 3.2, 0)
         self.assertEqual(result, 4)
 
+    def calculate_operation(self, operation, num1, num2):
+        entry_num1 = num1
+        entry_num2 = num2
+
+        if operation == "Деление" and num2 == 0:
+            raise tk.TclError("Деление на ноль невозможно")
+
+        if operation == "Сложение":
+            result = num1 + num2
+        elif operation == "Вычитание":
+            result = num1 - num2
+        elif operation == "Умножение":
+            result = num1 * num2
+        elif operation == "Деление":
+            result = num1 / num2
+        elif operation == "Остаток от деления":
+            result = num1 % num2
+        elif operation == "Возведение в степень":
+            result = num1 ** num2
+        elif operation == "Sin":
+            result = math.sin(num1)
+        elif operation == "Cos":
+            result = math.cos(num1)
+        elif operation == "Квадратный корень":
+            result = math.sqrt(num1)
+        elif operation == "Округление в меньшую сторону":
+            result = math.floor(num1)
+        elif operation == "Округление в большую сторону":
+            result = math.ceil(num1)
+
+        return result
+
+
+if __name__ == '__main__':
+    unittest.main(exit=False)
