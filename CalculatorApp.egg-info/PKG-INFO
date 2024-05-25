@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: CalculatorApp
+Version: 1.0
+Summary: Simple calculator app
+Author: AlinaV, Kamila_A
+Author-email: alinav2048@gmail.com
+License: MIT
+Keywords: calculator app
+Classifier: Development Status :: 3 - Alpha
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
